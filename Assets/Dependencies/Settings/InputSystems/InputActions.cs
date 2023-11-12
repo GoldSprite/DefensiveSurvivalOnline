@@ -28,7 +28,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             ""id"": ""5ed32db6-a9e6-4df8-b22f-7e3726b11a35"",
             ""actions"": [
                 {
-                    ""name"": ""Move"",
+                    ""name"": ""MoveActionValue"",
                     ""type"": ""Value"",
                     ""id"": ""da320e20-8a13-49c8-8be8-8a73885cdb8e"",
                     ""expectedControlType"": """",
@@ -45,7 +45,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveActionValue"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -56,7 +56,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveActionValue"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -67,7 +67,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveActionValue"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -78,7 +78,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveActionValue"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -89,7 +89,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveActionValue"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -100,7 +100,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
 }");
         // GamePlay
         m_GamePlay = asset.FindActionMap("GamePlay", throwIfNotFound: true);
-        m_GamePlay_Move = m_GamePlay.FindAction("Move", throwIfNotFound: true);
+        m_GamePlay_Move = m_GamePlay.FindAction("MoveActionValue", throwIfNotFound: true);
     }
 
     public void Dispose()
