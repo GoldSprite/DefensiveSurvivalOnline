@@ -690,10 +690,8 @@ PlayerSettings:
   scriptingDefineSymbols: {}
   additionalCompilerArguments: {}
   platformArchitecture: {}
-  scriptingBackend:
-    Standalone: 0
-  il2cppCompilerConfiguration:
-    Standalone: 2
+  scriptingBackend: {}
+  il2cppCompilerConfiguration: {}
   managedStrippingLevel:
     EmbeddedLinux: 1
     GameCoreScarlett: 1
