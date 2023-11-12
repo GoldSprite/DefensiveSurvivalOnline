@@ -37,7 +37,8 @@ public class MyInputSystemManager : MonoBehaviour
     /// </summary>
     private void UpdateValues()
     {
-        UpdateJoystickValue();
+        if(joystick != null)
+            UpdateJoystickValue();
     }
 
 
