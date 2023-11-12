@@ -7,8 +7,10 @@ public class MyInputSystemManager : MonoBehaviour
     //配置
     public static InputActions InputActionInstance { get; private set; }
     public static MyInputSystemManager Instance;
+    public Joystick joystick;
     //实时
     public Vector2 MoveActionValue { get; private set; }
+    Vector2 oldJoystickMoveActionValue;
 
 
     private void Awake()
@@ -16,11 +18,43 @@ public class MyInputSystemManager : MonoBehaviour
         if (Instance == null) Instance = this;
         initInputActions();
         RegisterAllActionListener();
+        GetJoystick();
     }
 
     private void OnDisable()
     {
         InputActionInstance.Disable();
+    }
+
+    private void Update()
+    {
+        UpdateValues();
+    }
+
+
+    /// <summary>
+    /// 更新同步所有Action值
+    /// </summary>
+    private void UpdateValues()
+    {
+        UpdateJoystickValue();
+    }
+
+
+    /// <summary>
+    /// 更改时<para/>
+    /// 刷新Joystick轮盘输入
+    /// </summary>
+    private void UpdateJoystickValue()
+    {
+        var move = MoveActionValue;
+        move.x = joystick.Horizontal;
+        move.y = joystick.Vertical;
+        if (oldJoystickMoveActionValue != move)
+        {
+            MoveActionValue = oldJoystickMoveActionValue = move;
+            //Debug.Log("刷新摇杆值");
+        }
     }
 
 
@@ -52,6 +86,13 @@ public class MyInputSystemManager : MonoBehaviour
         };
         InputActionInstance.GamePlay.Move.performed += MoveListener;
         InputActionInstance.GamePlay.Move.canceled += MoveListener;
+
+    }
+
+
+    private void GetJoystick()
+    {
+        joystick = GameObject.FindObjectOfType<Joystick>().GetComponent<Joystick>();
     }
 
 
