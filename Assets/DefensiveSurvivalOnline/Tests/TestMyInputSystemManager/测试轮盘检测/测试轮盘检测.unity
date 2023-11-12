@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad6849a83377e34b91dbfec2d87bf11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Joystick: {fileID: 1619186703}
+  joystick: {fileID: 1619186703}
 --- !u!1001 &1619186701
 PrefabInstance:
   m_ObjectHideFlags: 0
