@@ -1,0 +1,12 @@
+{
+    "name": "cn.unity.sync.relay",
+    "displayName": "UOS Sync Relay",
+    "description": "Uos sync relay sdk. ( currently support netcode, mirror and fishnet)",
+    "version": "1.0.15",
+    "unity": "2020.3",
+    "dependencies": {
+        "com.unity.netcode.gameobjects": "1.3.1",
+        "com.unity.transport": "1.3.3",
+        "com.unity.nuget.newtonsoft-json": "3.2.1"
+    }
+}
