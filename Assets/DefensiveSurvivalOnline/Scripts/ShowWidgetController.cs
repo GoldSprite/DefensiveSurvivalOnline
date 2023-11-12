@@ -8,20 +8,26 @@ using UnityEngine.InputSystem;
 public class ShowWidgetController : MonoBehaviour
 {
     public GameObject TouchWidgets;
-    bool showTouchWidgets;
-    public bool ShowTouchWidgets { 
-        get { return showTouchWidgets; } 
-        set
-        {
-            showTouchWidgets = value;
-            TouchWidgets.SetActive(value);  //手动更新值时切换显示
-        }
-    }
+    public bool ShowTouchWidgets;
+    bool oldShowTouchWidgets;
 
 
     private void Start()
     {
-        ShowTouchWidgets = IsHandHeldDevice();  //手持设备自动显示触屏控件
+        TouchWidgets.SetActive(oldShowTouchWidgets = ShowTouchWidgets = IsHandHeldDevice());
+    }
+
+
+    private void Update()
+    {
+        CGShow();
+    }
+
+
+    void CGShow()
+    {
+        if (oldShowTouchWidgets != ShowTouchWidgets)
+            TouchWidgets.SetActive(oldShowTouchWidgets = ShowTouchWidgets);
     }
 
 
